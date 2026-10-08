@@ -1,0 +1,35 @@
+"use client";
+
+import { useEffect } from "react";
+
+export default function GlobalError({
+  error,
+  reset,
+}: {
+  error: Error & { digest?: string };
+  reset: () => void;
+}) {
+  useEffect(() => {
+    console.error(error);
+  }, [error]);
+
+  return (
+    <html lang="en">
+      <body>
+        <div className="flex min-h-screen flex-col items-center justify-center px-4 text-center">
+          <p className="text-5xl font-bold" style={{ color: "#dc2626" }}>Critical Error</p>
+          <h1 className="mt-4 text-2xl font-semibold">Application error</h1>
+          <p className="mt-2 max-w-md" style={{ color: "#737373" }}>
+            A critical error occurred. Please refresh the page.
+          </p>
+          <button
+            onClick={reset}
+            style={{ marginTop: "2rem", background: "#EB8404", color: "#fff", padding: "0.625rem 1.5rem", borderRadius: "0.5rem", border: "none", cursor: "pointer", fontSize: "0.875rem", fontWeight: 500 }}
+          >
+            Refresh
+          </button>
+        </div>
+      </body>
+    </html>
+  );
+}

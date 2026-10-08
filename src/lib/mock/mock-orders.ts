@@ -1,0 +1,55 @@
+import type { Order } from "@/types";
+
+export const mockOrders: Order[] = [
+  {
+    id: "ord-1",
+    orderNumber: "G2E-2024-001234",
+    status: "delivered",
+    items: [
+      {
+        id: "oi-1",
+        productId: "prod-1",
+        productName: "Premium California Almonds",
+        productSlug: "premium-california-almonds",
+        variantName: "500g",
+        image: "https://placehold.co/100x100/f4f1de/333333?text=Almonds",
+        quantity: 2,
+        unitPrice: 549,
+        totalPrice: 1098,
+        mrp: 649,
+        discount: 100,
+      },
+    ],
+    shippingAddress: {
+      fullName: "Rahul Sharma",
+      phone: "+91-9876543210",
+      addressLine1: "123, MG Road",
+      city: "Bengaluru",
+      state: "Karnataka",
+      pincode: "560001",
+      country: "India",
+    },
+    payment: {
+      id: "pay-1",
+      method: "razorpay",
+      status: "paid",
+      amount: 1098,
+      transactionId: "pay_XXXXXXXXXX",
+      paidAt: "2024-01-15T10:30:00Z",
+    },
+    shipment: {
+      id: "ship-1",
+      trackingNumber: "DELHIVERY123456",
+      carrier: "Delhivery",
+      status: "delivered",
+      estimatedDelivery: "2024-01-18",
+    },
+    subtotal: 1098,
+    discount: 0,
+    shippingFee: 0,
+    tax: 0,
+    total: 1098,
+    createdAt: "2024-01-15T09:00:00Z",
+    updatedAt: "2024-01-18T14:00:00Z",
+  },
+];
